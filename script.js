@@ -16,7 +16,7 @@ function togglePlay(){
 }
 function updateButton(){
 	const icon = video.paused ? '►' : '❚ ❚'
-	toogle.textContent = icon
+	toggle.textContent = icon
 }
 function skip(){
 	const skipTime = parseFloat(this.dataset.skip)
@@ -25,13 +25,13 @@ function skip(){
 function handleRangeUpdate(){
 	video[this.name] = this.value
 }
-function handleProgress){
+function handleProgress()){
 	const percent = (video.currentTime/video.duration)*100
 	progressBar.style.flexBasis = `${percent}%`
 }
 function scrub(e){
 	const scrubTime = (e.offsetX/progress.offsetWidth)*video.duration
-	video.currentTime scrubTime
+	video.currentTime = scrubTime
 }
 
 video.addEventListener('click', togglePlay)
